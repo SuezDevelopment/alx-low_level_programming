@@ -9,16 +9,18 @@
 int main()
 {
 	int inc;
-	unsigned long n1 = 1, n2 = 3, n3;
+	unsigned long fib[98];
+	fib[0] = 1;
+	fib[1] = 2;
 
- 	printf("%lu, %lu, ", n1, n2);
+	for (inc = 2; inc < 98; inc++) {
+        	fib[inc] = fib[inc-1] + fib[inc-2];
+    	}
 
-	for (inc = 3; inc <= 98; inc++) {
-		n3 = n1 + n2;
-		printf("%lu, ", n3);
-		n1 = n2;
-		n2 = n3;
+	for (inc = 0; inc < 98; inc++) {
+		printf("%lu ",fib[inc]);
 	}
+
 	printf("\n");
 	return 0;
 }
