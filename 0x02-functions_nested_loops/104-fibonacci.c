@@ -6,21 +6,20 @@
  * Return: 0
  */
 
-int main()
+int main(void)
 {
-	int inc;
-	unsigned long fib[98];
-	fib[0] = 1;
-	fib[1] = 2;
 
-	for (inc = 2; inc < 98; inc++) {
-        	fib[inc] = fib[inc-1] + fib[inc-2];
-    	}
+	unsigned long fib1 = 1, fib2 = 2, fib3, count = 2;
 
-	for (inc = 0; inc < 98; inc++) {
-		printf("%lu ",fib[inc]);
+	printf("%ld, %ld, ",fib1, fib2);
+
+	while (count < 98) {
+		fib3 = fib1 + fib2;
+		printf("%ld, ", fib3);
+		fib1 = fib2;
+		fib2 = fib3;
+		count++;
 	}
-
 	printf("\n");
 	return 0;
 }
