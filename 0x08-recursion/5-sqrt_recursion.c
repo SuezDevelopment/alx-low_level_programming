@@ -36,11 +36,16 @@ int _sqrt_recursion(int n)
 
 int _root_sqrt(int sqrv, int cont)
 {
-	if (cont * cont == sqrv) {
+	if (cont * cont == sqrv)
+	{
 		return (cont);
-	} else if (cont * cont > sqrv) {
+	}
+	else if (cont * cont > sqrv)
+	{
 		return (-1);
-	} else {
+	}
+	else
+	{
 		return (_root_sqrt(sqrv, cont + 1));
 	}
 }
